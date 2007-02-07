@@ -1,0 +1,40 @@
+# color listing
+alias ls="ls -F --color=yes"
+# long listing
+alias ll="ls -laF --color=yes"
+# long list by time
+alias lt="ls -laFtr --color=yes"
+                                                                           
+                                                                           
+# set the name of the terminal to the current working dir.
+alias cwdcmd='echo -n "^[]2;$cwd^G"'
+                                                                           
+# set up the name of the terminal!!!
+alias myminicom='echo -n "^[]2;${HOST}:minicom^G";minicom'
+                                                                           
+                                                                           
+#alias vi="/g/g0/weiny2/root/bin/vim"
+#alias vim="/g/g0/weiny2/root/bin/gvim -geom 80x72"
+#alias vimdiff="/g/g0/weiny2/root/bin/vimdiff -geom 80x95"
+alias f="fetchmail"
+alias m="fetchmail; elm"
+alias h="history"
+alias print="enscript --margins=:::50 -2r -G"
+                                                                           
+alias pg="ping google.com"
+                                                                           
+alias psg="ps -ef | grep"
+# Environment grep
+alias eg="env | grep"
+                                                                           
+alias :q="exit"
+                                                                           
+alias cl="clear"
+                                                                           
+alias ip="/sbin/ifconfig"
+
+alias sshz="ssh z.llnl.gov"
+                                                                           
+alias show="kibitz"
+
+
