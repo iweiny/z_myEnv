@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # setup the home account for this environment
 
