@@ -59,7 +59,7 @@ source ~/.bzaliases
 
 # set up to use my personal Perl extensions.
 # ie Tk
-export PERL5LIB=/g/g0/weiny2/root/lib/perl5/site_perl/5.8.0/i386-linux-thread-multi
+#export PERL5LIB=/home/iweiny/Software/Tk-804.027/Tk:/home/iweiny/Software/Tk-804.027
                                                                                 
 # don't give the world access.
 umask 027

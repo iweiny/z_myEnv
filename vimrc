@@ -22,7 +22,7 @@ endfunction
 
 command Dts :call InsertDate()
 
-source ~/.vim/vimispell.vim
+"source ~/.vim/vimispell.vim
 
 filetype plugin on
 
@@ -39,13 +39,16 @@ inoremap <Tab> <C-R>=CleverTab()<CR>
 runtime ftplugin/man.vim
 map K :Man <C-R>=expand("<cword>")<CR><CR>
 
-function! Text()
-    " Periodically check the spelling.
-    autocmd! CursorHold * exe "silent! AutoSpell"
-    set updatetime=1000
-    silent! call GUIText()
-endfunction
-command! Text :call Text()
+"function! Text()
+"    " Periodically check the spelling.
+"    autocmd! CursorHold * exe "silent! AutoSpell"
+"    set updatetime=1000
+"    silent! call GUIText()
+"endfunction
+"command! Text :call Text()
+
+" new vim 7.0 spell check
+setlocal spell spelllang=en_us
 
 syntax enable
 
