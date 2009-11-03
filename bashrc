@@ -22,7 +22,7 @@ function prompt_command {
                                                                                 
 function setPrompt {
     #PROMPT_COMMAND=prompt_command
-    PS1="$PromBACK$PromTEXT\u@\h$PromNO_COLOUR:\w\n\t > "
+    PS1="$PromBACK$PromTEXT\u \h$PromNO_COLOUR \w\n\t > "
     PS2="> "
 }
                                                                                 

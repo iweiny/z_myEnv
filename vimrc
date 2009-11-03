@@ -1,9 +1,9 @@
-set expandtab
+set noexpandtab
 set textwidth=79
 set backspace=2
 
-set sw=3
-set ts=3
+set sw=8
+set ts=8
 set autoindent
 "set cindent
 
@@ -15,12 +15,12 @@ map <C-s> :w<CR>
 " plain date
 "map <F8> :read !date +\%l\:\%M<CR>kJA --
 
-function! InsertDate()
-    read !date
-    normal o
-endfunction
+"function! InsertDate()
+"    read !date
+"    normal o
+"endfunction
 
-command Dts :call InsertDate()
+"command Dts :call InsertDate()
 
 "source ~/.vim/vimispell.vim
 
@@ -49,6 +49,16 @@ map K :Man <C-R>=expand("<cword>")<CR><CR>
 
 " new vim 7.0 spell check
 setlocal spell spelllang=en_us
+
+" Attempt to check spelling in "c" files.
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
 
 syntax enable
 

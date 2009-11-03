@@ -20,6 +20,7 @@ alias f="fetchmail"
 alias m="fetchmail; elm"
 alias h="history"
 alias print="enscript --margins=:::50 -2r -G"
+alias svu="head .svn/entries"
                                                                            
 alias pg="ping google.com"
                                                                            
@@ -31,8 +32,6 @@ alias :q="exit"
                                                                            
 alias cl="clear"
                                                                            
-alias ip="/sbin/ifconfig"
-
 alias sshz="ssh z.llnl.gov"
                                                                            
 alias show="kibitz"
