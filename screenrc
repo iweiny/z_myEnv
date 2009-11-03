@@ -1,0 +1,9 @@
+startup_message off
+vbell on
+vbell_msg "BEEP"
+hardstatus alwayslastline
+#hardstatus string '%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<'
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+#escape ``
+
