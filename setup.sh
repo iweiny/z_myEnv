@@ -4,7 +4,7 @@
 
 # change the folowing as needed
 BASE=`pwd`
-files="gvimrc vimrc vim bash_profile bashrc bzaliases lscolors screenrc"
+files="gvimrc vimrc vim bash_profile bashrc bzaliases lscolors screenrc gitconfig"
 
 # do the work
 cd $HOME

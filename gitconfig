@@ -1,0 +1,12 @@
+[alias]
+        co = checkout
+        st = status
+        br = branch
+        di = diff --color
+
+[user]
+	name = Ira Weiny
+	email = weiny2@llnl.gov
+
+[core]
+	editor = gvim -f
