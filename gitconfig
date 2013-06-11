@@ -8,7 +8,10 @@
 
 [user]
 	name = Ira Weiny
-	email = ira.weiny@intel.com
+	email = iweiny@gmail.com
 
 [core]
 	editor = vim
+
+[sendemail]
+	from = iweiny@gmail.com
