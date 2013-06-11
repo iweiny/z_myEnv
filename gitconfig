@@ -3,10 +3,12 @@
         st = status
         br = branch
         di = diff --color
+        sh = show --color
+	lg = log --graph --abbrev-commit --pretty=oneline --decorate
 
 [user]
 	name = Ira Weiny
-	email = weiny2@llnl.gov
+	email = ira.weiny@intel.com
 
 [core]
-	editor = gvim -f
+	editor = vim
