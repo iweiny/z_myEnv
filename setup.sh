@@ -15,14 +15,22 @@ for file in $files; do
 	rm .$file
 done
 
-# if the user wants to remain clean the exit.
+# if the user wants to remain clean then exit.
 if [ "$1" == "uninstall" ]; then
 	exit 0
 fi
 
-# install new env
+# link new env
 for file in $files; do
 	ln -s $BASE/$file .$file
 done
 
+if [ ! -d ./bin ]; then
+	mkdir ./bin
+fi
+
+# link bin files
+for file in $BASE/bin/*; do
+	ln -s $file ./bin
+done
 
