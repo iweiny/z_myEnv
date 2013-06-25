@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cvs diff -U 5 -p | grep -v -e "? " > /tmp/cvsfoo
+cat /tmp/cvsfoo
