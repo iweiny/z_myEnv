@@ -34,3 +34,9 @@ for file in $BASE/bin/*; do
 	ln -s $file ./bin
 done
 
+# set up rpmbuilds in my home dir
+if [ ! -d ~/rpmbuild ]; then
+	mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+	echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
+fi
+
