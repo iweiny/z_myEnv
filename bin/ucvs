@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# create a command which actually updates to the latest version of everything
+# by creating and removing directories and updating to HEAD from our "sticky"
+# tag
+
+echo "UPDATING cvs to HEAD"
+out=`mktemp`
+cvs update -d -P -j HEAD | grep -v -e "\? .*" > $out
+less $out
+echo "Output left in : $out"

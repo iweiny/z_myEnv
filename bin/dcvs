@@ -1,4 +1,11 @@
 #!/bin/sh
 
-cvs diff -U 5 -p $1 | grep -v -e "? " > /tmp/cvsfoo
-less /tmp/cvsfoo
+# create a command which actually displays diffs in a reasonable format and
+# leaves them for the user to review at the end of the gobblygook output from
+# cvs
+
+echo "diffing cvs"
+out=`mktemp`
+cvs diff -U 5 -p $1 | grep -v -e "\? .*" > $out
+less $out
+echo "Output left in : $out"
