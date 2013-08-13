@@ -6,6 +6,6 @@
 
 echo "diffing cvs"
 out=`mktemp`
-cvs diff -U 5 -p $1 | grep -v -e "\? .*" > $out
+cvs -Q diff -U 5 -p $1 | grep -v -e "\? .*" > $out
 less $out
 echo "Output left in : $out"

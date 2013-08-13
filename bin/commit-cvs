@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# create a command which captures the cvs output for pasting into bugzilla
+
+echo "commiting cvs"
+out=`mktemp`
+cvs commit | grep -v -e "\? .*" > $out
+less $out
+echo "Output left in : $out"
