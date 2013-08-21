@@ -5,6 +5,8 @@
         di = diff --color
         sh = show --color
 	lg = log --graph --abbrev-commit --pretty=oneline --decorate
+	authors = log --pretty=format:'Author: %aN <%aE> %s'
+	changelog = log --pretty=format:'* %s'
 
 [user]
 	name = Ira Weiny
