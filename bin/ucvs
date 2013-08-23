@@ -6,6 +6,6 @@
 
 echo "UPDATING cvs to HEAD"
 out=`mktemp`
-cvs -Q update -d -P -j HEAD | grep -v -e "\? .*" > $out
+cvs update -d -P -j HEAD | grep -v -e "\? .*" > $out
 less $out
 echo "Output left in : $out"
