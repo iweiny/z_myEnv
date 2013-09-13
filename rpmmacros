@@ -1,0 +1,2 @@
+%_topdir %(echo $HOME)/rpmbuild
+%dist %{nil}
