@@ -4,8 +4,10 @@
 # by creating and removing directories and updating to HEAD from our "sticky"
 # tag
 
-echo "UPDATING cvs to HEAD"
+#echo "UPDATING cvs to HEAD"
+echo "UPDATING cvs"
 out=`mktemp`
-cvs update -d -P -j HEAD | grep -v -e "\? .*" > $out
+#time cvs update -d -P -j HEAD | grep -v -e "\? .*" > $out
+time cvs update -d -P | grep -v -e "\? .*" > $out
 less $out
 echo "Output left in : $out"
