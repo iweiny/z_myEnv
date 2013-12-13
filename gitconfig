@@ -2,10 +2,14 @@
         co = checkout
         st = status
         br = branch
-        di = diff --color
-        sh = show --color
+        di = diff
+        dic = diff --color
+        sh = show
+        shc = show --color
+	lgc = log --graph --abbrev-commit --pretty=oneline --decorate --color
 	lg = log --graph --abbrev-commit --pretty=oneline --decorate
-	authors = log --pretty=format:'Author: %aN <%aE> %s'
+	authors = log --pretty=format:'%h  :  %aN  :  %s'
+	emails = log --pretty=format:'%aN <%aE> %s'
 	changelog = log --pretty=format:'* %s'
 
 [user]
