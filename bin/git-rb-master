@@ -1,0 +1,42 @@
+#!/bin/sh
+
+master="master"
+
+if [ "$1" == "--master" ]; then
+	shift;
+	master="$1"
+	shift;
+fi
+
+echo ""
+echo "rebasing : $@"
+echo ""
+echo "    to : '$master'"
+echo ""
+echo -n "    OK? "
+read ch
+if [ "$ch" != "yes" ]; then
+	exit 1
+fi
+
+for b in $@; do
+	echo "rebasing $b to $master"
+	git rebase $master $b
+	rc=$?
+	if [ "$rc" != "0" ]; then
+		echo ""
+		echo "   *** rebase of '$b' failed: $rc"
+		echo ""
+		echo "   *** current branch is now : '$b'"
+		echo ""
+		exit $rc
+	fi
+	echo ""
+	echo "   *** rebase of '$b' complete: $rc"
+	echo ""
+done
+
+git checkout $master
+echo ""
+
+exit 0
