@@ -1,0 +1,31 @@
+#!/bin/sh
+
+master="master"
+
+if [ "$1" == "" ] || [ "$2" == "" ] ; then
+	echo "usage: git-diff-commit <commit_id> <commit_id2>"
+	exit 1
+fi
+
+
+patch1=`mktemp`
+echo "   *** Creating patch for commit $1 : $patch1"
+patch_name=`git format-patch $1^..$1`
+mv $patch_name $patch1
+
+patch2=`mktemp`
+echo "   *** Creating patch for commit $1 : $patch2"
+patch_name=`git format-patch $2^..$2`
+mv $patch_name $patch2
+
+echo ""
+echo "   *** Differences ***"
+echo ""
+diff -U 5 $patch1 $patch2
+echo ""
+echo "   *** END ***"
+echo ""
+
+rm $patch1 $patch2
+
+exit 0
