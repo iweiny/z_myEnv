@@ -10,6 +10,10 @@ set autoindent
 set nocp
 set formatoptions=tcroqn
 
+" Set up for mouse support in an xterm
+set ttymouse=xterm2
+set mouse=a
+
 " mapping of keys we like
 map <C-s> :w<CR>
 " plain date
