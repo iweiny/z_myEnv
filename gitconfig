@@ -11,6 +11,9 @@
 	authors = log --pretty=format:'%h  :  %aN  :  %s'
 	emails = log --pretty=format:'%aN <%aE> %s'
 	changelog = log --pretty=format:'* %s'
+	rbcont = rebase --continue
+	rba = rebase --abort
+	rbsk = rebase --skip
 
 [user]
 	name = Ira Weiny
