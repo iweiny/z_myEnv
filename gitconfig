@@ -2,6 +2,7 @@
         co = checkout
         st = status
         br = branch
+        brv = branch -vv
         di = diff
         dic = diff --color
         sh = show
