@@ -7,6 +7,7 @@ set ts=8
 set autoindent
 "set cindent
 
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set nocp
 set formatoptions=tcroqn
 
