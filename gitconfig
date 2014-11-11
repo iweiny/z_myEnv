@@ -15,6 +15,7 @@
 	rbcont = rebase --continue
 	rba = rebase --abort
 	rbsk = rebase --skip
+	pullr = pull --rebase
 
 [user]
 	name = Ira Weiny
