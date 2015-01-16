@@ -49,7 +49,7 @@ export BSTINPUTS=${BSTINPUTS}:.
 export CVS_RSH=ssh
 export SVN_RSH=ssh
 
-export PATH=~/bin:~/sbin:$PATH:~/root/bin:~/root/enlightenment/bin
+export PATH=~/bin:~/sbin:$PATH:~/root/bin:~/root/enlightenment/bin:~/management/root/sbin/
 
 # set up GNATS DB for chaos
 # only on "z"
