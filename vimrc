@@ -67,6 +67,10 @@ highlight SpellLocal term=underline cterm=underline
 
 syntax enable
 
+let g:xml_syntax_folding=1
+au BufNewFile,BufReadPost *.xml setlocal foldmethod=syntax
+
+
 " Must be last to allow user to override things for their particular
 " workstation
 " source /home/iweiny/.vim/workstation.vim
