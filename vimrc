@@ -5,6 +5,7 @@ set backspace=2
 set sw=8
 set ts=8
 set autoindent
+set laststatus=2
 "set cindent
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
