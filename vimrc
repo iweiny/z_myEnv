@@ -6,6 +6,7 @@ set sw=8
 set ts=8
 set autoindent
 set laststatus=2
+set scrolloff=10
 "set cindent
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
