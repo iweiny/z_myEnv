@@ -19,13 +19,32 @@ PromNO_COLOUR="\033[0m"
 function prompt_command {
     LISTING=`ls -C -F --color=yes`
 }
+
+# git code stolen from Mitko
+unset __is_git_repo
+function __is_git_repo {
+	git rev-parse --is-inside-work-tree > /dev/null 2>&1
+	# turn this around because rev-parse is 0 on success
+	return $((! ! ${?}))
+}
+
+unset __get_git_branch
+function __get_git_branch {
+	__is_git_repo || return
+	branch=$(git branch | grep '*' | sed -e 's/.*\*\ //')
+	echo $branch
+}
                                                                                 
 function setPrompt {
     #PROMPT_COMMAND=prompt_command
-    PS1="$PromBACK$PromTEXT\u \h$PromNO_COLOUR \w\n\t > "
+    branch=`__get_git_branch`
+    if [ "$branch" != "" ]; then
+    	branch="\n($branch)"
+    fi
+    PS1="$PromBACK$PromTEXT\u \h$PromNO_COLOUR \w${branch}\n\t > "
     PS2="> "
 }
-                                                                                
+
 # User specific aliases and functions
                                                                                 
 # Source global definitions
@@ -36,7 +55,8 @@ fi
 set -o vi
                                                                                 
 if [ "$PS1" != "" ]; then
-   setPrompt
+   #setPrompt
+    PROMPT_COMMAND=setPrompt
 fi
                                                                                 
 # set up LS_COLORS
