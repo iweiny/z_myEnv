@@ -31,17 +31,17 @@ function __is_git_repo {
 unset __get_git_branch
 function __get_git_branch {
 	__is_git_repo || return
-	branch=$(git branch | grep '*' | sed -e 's/.*\*\ //')
+	branch=$(git branch -vvv| grep '*' | sed -e 's/.*\*\ //')
 	echo $branch
 }
                                                                                 
 function setPrompt {
     #PROMPT_COMMAND=prompt_command
-    branch=`__get_git_branch`
-    if [ "$branch" != "" ]; then
-    	branch="\n($branch)"
+    git_st=`__get_git_branch`
+    if [ "$git_st" != "" ]; then
+    	git_st="\n(GIT: $git_st)"
     fi
-    PS1="$PromBACK$PromTEXT\u \h$PromNO_COLOUR \w${branch}\n\t > "
+    PS1="$PromBACK$PromTEXT\u \h$PromNO_COLOUR \w${git_st}\n\t > "
     PS2="> "
 }
 
