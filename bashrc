@@ -39,7 +39,7 @@ function setPrompt {
     #PROMPT_COMMAND=prompt_command
     git_st=`__get_git_branch`
     if [ "$git_st" != "" ]; then
-    	git_st="\n(GIT: $git_st)"
+    	git_st="\n$PromBACK$PromTEXT GIT:$PromNO_COLOUR $git_st"
     fi
     PS1="$PromBACK$PromTEXT\u \h$PromNO_COLOUR \w${git_st}\n\t > "
     PS2="> "
