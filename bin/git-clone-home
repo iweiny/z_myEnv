@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ ! -f ~/.git-home-base ]; then
+	echo "No home base found : ~/.git-home-base"
+	exit
+fi
+
+. ~/.git-home-base
+
+git clone $GIT_HOME/$1
+
