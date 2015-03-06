@@ -13,6 +13,10 @@ pushd `pwd`/..
 my_env_dir=`pwd`
 popd
 
+pushd ~
+my_home_dir=`pwd`
+popd
+
 echo ""
 echo "Generating key on localhost"
 echo ""
@@ -63,5 +67,8 @@ echo ""
 ssh $remote
 
 ssh $remote 'pushd ~/z_myEnv; ./setup.sh'
+
+cmd="echo 'GIT_HOME=$base_host:$my_home_dir' >> ~/.git-home-base"
+ssh $remote $cmd
 
 
