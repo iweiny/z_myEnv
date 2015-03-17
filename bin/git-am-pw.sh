@@ -2,7 +2,7 @@
 
 wget_git_file=/tmp/wget-git-am-file
 
-patch=$1
+patch=$1/mbox/
 
 echo ""
 echo ""
