@@ -1,0 +1,14 @@
+
+set spoolfile="imaps://iweiny@imapmail.intel.com/INBOX"
+set record="=Sent"
+set postponed="=Drafts"
+
+set ssl_starttls=yes
+unset imap_passive
+set mail_check=60
+set editor="vim"
+
+# unknown variables...
+set trash="=Trash"
+set ssl_force_tls=yes
+set header_cache=~/.hcache
