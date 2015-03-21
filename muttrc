@@ -1,5 +1,8 @@
 
 set spoolfile="imaps://iweiny@imapmail.intel.com/INBOX"
+set from="ira.weiny@intel.com"
+set envelope_from=yes
+
 set record="=Sent"
 set postponed="=Drafts"
 
