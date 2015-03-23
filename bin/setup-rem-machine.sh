@@ -60,9 +60,13 @@ echo ""
 echo "Cloning: $base_host:$my_env_dir"
 echo ""
 
-echo " Run this and exit when done"
+echo " Run one of these and exit when done"
 echo ""
+echo "New Machine:"
 echo "   git clone -b master $base_host:$my_env_dir"
+echo ""
+echo "Already has z_myEnv:"
+echo "   ssh $base_host"
 echo ""
 ssh $remote
 
