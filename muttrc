@@ -14,6 +14,9 @@ unset imap_passive
 set mail_check=60
 set editor="vim"
 
+# bindings
+bind index G imap-fetch-mail
+
 # unknown variables...
 set trash="=Trash"
 set ssl_force_tls=yes
