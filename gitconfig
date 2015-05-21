@@ -23,6 +23,7 @@
 
 [core]
 	editor = vim
+	abbrev = 12
 
 [sendemail]
 	from = iweiny@gmail.com
