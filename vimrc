@@ -72,6 +72,7 @@ syntax enable
 let g:xml_syntax_folding=1
 au BufNewFile,BufReadPost *.xml setlocal foldmethod=syntax
 
+autocmd QuickFixCmdPost *grep* cwindow
 
 " Must be last to allow user to override things for their particular
 " workstation
