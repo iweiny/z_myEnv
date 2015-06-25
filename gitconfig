@@ -12,6 +12,7 @@
 	authors = log --pretty=format:'%h  :  %aN  :  %s'
 	emails = log --pretty=format:'%aN <%aE> %s'
 	changelog = log --pretty=format:'* %s'
+	fixes = log --pretty=fixes
 	rbcont = rebase --continue
 	rba = rebase --abort
 	rbsk = rebase --skip
@@ -27,3 +28,6 @@
 
 [sendemail]
 	from = iweiny@gmail.com
+
+[pretty]
+	fixes = Fixes: %h (\"%s\")
