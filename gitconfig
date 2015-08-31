@@ -7,8 +7,8 @@
         dic = diff --color
         sh = show
         shc = show --color
-	lgc = log --graph --abbrev-commit --pretty=oneline --decorate --color
-	lg = log --graph --abbrev-commit --pretty=oneline --decorate
+	lg = log --abbrev-commit --pretty=oneline --decorate --color
+	lgg = log --graph --abbrev-commit --pretty=oneline --decorate --color
 	authors = log --pretty=format:'%h  :  %aN  :  %s'
 	emails = log --pretty=format:'%aN <%aE> %s'
 	changelog = log --pretty=format:'* %s'
