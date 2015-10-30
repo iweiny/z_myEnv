@@ -9,6 +9,7 @@
         shc = show --color
 	lg = log --abbrev-commit --pretty=oneline --decorate --color
 	lgg = log --graph --abbrev-commit --pretty=oneline --decorate --color
+	lgp = log -p --color
 	authors = log --pretty=format:'%h  :  %aN  :  %s'
 	emails = log --pretty=format:'%aN <%aE> %s'
 	changelog = log --pretty=format:'* %s'
