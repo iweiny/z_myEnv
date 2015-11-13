@@ -17,6 +17,8 @@
 	rba = rebase --abort
 	rbsk = rebase --skip
 	pullr = pull --rebase
+	chp = cherry-pick
+	contains = branch --contains
 
 [user]
 	name = Ira Weiny
