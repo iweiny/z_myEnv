@@ -31,8 +31,8 @@ function __is_git_repo {
 unset __get_git_branch
 function __get_git_branch {
 	__is_git_repo || return
-	branch=$(git branch -vvv| grep '*' | sed -n 's/^\* \(.*\)/\1/p')
-	echo $branch
+	branch=$(git branch -vvv | sed -n 's/^\* \(.*\)/\1/p')
+	echo "$branch"
 }
                                                                                 
 function setPrompt {
