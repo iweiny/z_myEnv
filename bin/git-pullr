@@ -1,0 +1,37 @@
+#!/bin/sh
+
+echo ""
+echo "pull --rebase the following"
+echo ""
+echo "git pull --rebase : $@"
+echo ""
+echo -n "    OK? "
+read ch
+if [ "$ch" != "yes" ]; then
+	exit 1
+fi
+
+for b in $@; do
+	echo "checkout $b"
+	git checkout $b
+	rc=$?
+	if [ "$rc" != "0" ]; then
+		echo ""
+		echo "   *** checkout of '$b' failed: $rc"
+		echo ""
+		exit $rc
+	fi
+	git pull --rebase
+	rc=$?
+	if [ "$rc" != "0" ]; then
+		echo ""
+		echo "   *** 'pull --rebase' of '$b' failed: $rc"
+		echo ""
+		exit $rc
+	fi
+	echo ""
+	echo "   *** 'pull --rebase' of '$b' complete: $rc"
+	echo ""
+done
+
+exit 0
