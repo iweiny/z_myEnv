@@ -1,9 +1,15 @@
 #!/bin/sh
 
+b_list=$@
+
+if [ "$b_list" == "" ]; then
+	b_list=`git branch --list | grep "*" | sed -e "s/^\* \(.*\)/\1/"`
+fi
+
 echo ""
 echo "pull --rebase the following"
 echo ""
-echo "git pull --rebase : $@"
+echo "git pull --rebase : $b_list"
 echo ""
 echo -n "    OK? "
 read ch
@@ -11,7 +17,7 @@ if [ "$ch" != "yes" ]; then
 	exit 1
 fi
 
-for b in $@; do
+for b in $b_list; do
 	echo "checkout $b"
 	git checkout $b
 	rc=$?
