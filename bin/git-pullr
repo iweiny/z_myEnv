@@ -3,7 +3,7 @@
 b_list=$@
 
 if [ "$b_list" == "" ]; then
-	b_list=`git branch --list | grep "*" | sed -e "s/^\* \(.*\)/\1/"`
+	b_list=`git branch | grep "*" | sed -e "s/^\* \(.*\)/\1/"`
 fi
 
 echo ""
