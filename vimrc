@@ -74,6 +74,68 @@ au BufNewFile,BufReadPost *.xml setlocal foldmethod=syntax
 
 autocmd QuickFixCmdPost *grep* cwindow
 
+" Git commands which are commonly usefull
+function! GitAnnotate()
+   let line = line(".")
+   bd annotate.tmp
+   silent! exe "!git annotate % > ~/z_myEnv/tmp/annotate.tmp"
+   silent! edit ~/z_myEnv/tmp/annotate.tmp
+   silent! exe line
+   redraw!
+endfunction
+com GAnn :call GitAnnotate()
+
+function! GitAdd()
+   silent! exe "!git add %"
+   redraw!
+endfunction
+com Gadd :call GitAdd()
+
+function! SmartSplit()
+   " not sure how to get width of terminal vs window
+   "let width = winwidth(0) " vim window
+   "let width = columns " ??? terminal ???
+   "if width < 100
+      "silent! split ~/z_myEnv/tmp/diff.tmp
+   "else
+      silent! vsplit ~/z_myEnv/tmp/diff.tmp
+   "endif
+   redraw!
+endfunction
+
+function! GitShow(cword)
+   bd diff.tmp
+   silent! exe "!git show ".a:cword." > ~/z_myEnv/tmp/diff.tmp"
+   call SmartSplit()
+endfunction
+com GSh :call GitShow("")
+
+function! GitAnnotateShow(cword)
+   call GitShow(a:cword)
+   wincmd w
+endfunction
+com Gas :call GitAnnotateShow("<cword>")
+
+function! GitDiff()
+   bd diff.tmp
+   silent! exe "!git diff > ~/z_myEnv/tmp/diff.tmp"
+   call SmartSplit()
+endfunction
+com GD :call GitDiff()
+
+function! GitDiffCached()
+   bd diff.tmp
+   silent! exe "!git diff --cached > ~/z_myEnv/tmp/diff.tmp"
+   call SmartSplit()
+endfunction
+com Gdc :call GitDiffCached()
+
+function! GitBranch()
+   exe "!git branch -vvv"
+endfunction
+com GBr :call GitBranch()
+
+
 " Must be last to allow user to override things for their particular
 " workstation
 " source /home/iweiny/.vim/workstation.vim
