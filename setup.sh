@@ -2,7 +2,7 @@
 
 # setup the home account for this environment
 
-# change the folowing as needed
+# change the following as needed
 BASE=`pwd`
 files="gvimrc vimrc vim bash_profile bashrc bzaliases lscolors screenrc gitconfig rpmmacros muttrc"
 
@@ -39,4 +39,6 @@ if [ ! -d ~/rpmbuild ]; then
 	mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 	echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 fi
+
+mkdir $BASE/tmp
 
