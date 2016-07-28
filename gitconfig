@@ -21,6 +21,7 @@
 	pullr = pull --rebase
 	chp = cherry-pick
 	contains = branch --contains
+	rv = remote -v
 
 [user]
 	name = Ira Weiny
