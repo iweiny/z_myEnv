@@ -3,6 +3,7 @@
         st = status
         br = branch
         brv = branch -vv
+        brr = branch -r
         di = diff
         dic = diff --color
         sh = show
