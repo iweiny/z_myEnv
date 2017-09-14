@@ -79,6 +79,7 @@ function! GitAnnotate()
    let line = line(".")
    bd annotate.tmp
    silent! exe "!git annotate % > ~/z_myEnv/tmp/annotate.tmp"
+   vsp
    silent! edit ~/z_myEnv/tmp/annotate.tmp
    silent! exe line
    redraw!
@@ -135,6 +136,8 @@ function! GitBranch()
 endfunction
 com GBr :call GitBranch()
 
+" change vimdiff change highlight to yellow "todo" vs default red
+highlight! link DiffText Todo
 
 " Must be last to allow user to override things for their particular
 " workstation
