@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 b_list=$@
 
